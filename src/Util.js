@@ -17,6 +17,55 @@
 	'use strict';
 
 	/**
+	 * Style.js major version
+	 * @private
+	 * @constant
+	 * @type {Number}
+	 */
+	var VERSION_MAJOR = 1;
+
+	/**
+	 * Style.js minor version
+	 * @private
+	 * @constant
+	 * @type {Number}
+	 */
+	var VERSION_MINOR = 0;
+
+	/**
+	 * Style.js patch version
+	 * @private
+	 * @constant
+	 * @type {Number}
+	 */
+	var VERSION_PATCH = 0;
+
+	// Local copy
+	var Util = function () {};
+
+	// Globalisation
+	$.Util = Util;
+
+	/**
+	 * Returns version of library
+	 * @static
+	 * @returns {String}
+	 */
+	Util.getVersion = function () {
+		return VERSION_MAJOR + '.' + VERSION_MINOR + '.' + VERSION_PATCH;
+	};
+
+	/**
+	 * Checks if value is empty
+	 * @private
+	 * @param {mixed} value
+	 * @returns {Boolean}
+	 */
+	Util.empty = function (value) {
+		return !value || (Type.isString(value) && value === '') || (Type.isArray(value) && value.length === 0);
+	};
+
+	/**
 	 * Check if a number is between two numbers
 	 * @param {Number} min Minium value
 	 * @param {Number} max Maxium value
