@@ -243,6 +243,18 @@
 	};
 
 	/**
+	 * Shuffle the Array items
+	 * @returns {Array}
+	 */
+	Array.prototype.shuffle = function () {
+		var out = this;
+
+		for (var j, x, i = out.length; i; j = parseInt(Math.random() * i), x = out[--i], out[i] = out[j], out[j] = x);
+
+		return out;
+	};
+
+	/**
 	 * Object implementation of Array.unshift
 	 * @returns {Object}
 	 */
